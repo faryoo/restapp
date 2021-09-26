@@ -1,0 +1,8 @@
+.idea
+main
+Dockerfile
+etc/mq-pro.yaml
+go.sum
+deployment.yaml
+sonar-project.properties
+.scannerwork
