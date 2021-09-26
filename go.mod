@@ -1,4 +1,4 @@
-module restapp
+module github.com/faryoo/restapp
 
 go 1.17
 
