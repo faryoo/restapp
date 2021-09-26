@@ -29,9 +29,7 @@ type MqReq struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Key    string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Score  int64  `protobuf:"varint,2,opt,name=Score,proto3" json:"Score,omitempty"`
-	Member string `protobuf:"bytes,3,opt,name=member,proto3" json:"member,omitempty"`
+	Data string `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
 }
 
 func (x *MqReq) Reset() {
@@ -66,23 +64,9 @@ func (*MqReq) Descriptor() ([]byte, []int) {
 	return file_thirdparty_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MqReq) GetKey() string {
+func (x *MqReq) GetData() string {
 	if x != nil {
-		return x.Key
-	}
-	return ""
-}
-
-func (x *MqReq) GetScore() int64 {
-	if x != nil {
-		return x.Score
-	}
-	return 0
-}
-
-func (x *MqReq) GetMember() string {
-	if x != nil {
-		return x.Member
+		return x.Data
 	}
 	return ""
 }
@@ -138,21 +122,23 @@ var File_thirdparty_proto protoreflect.FileDescriptor
 
 var file_thirdparty_proto_rawDesc = []byte{
 	0x0a, 0x10, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x12, 0x0a, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x22, 0x47,
-	0x0a, 0x05, 0x4d, 0x71, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x53, 0x63, 0x6f,
-	0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x12,
-	0x16, 0x0a, 0x06, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x06, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x23, 0x0a, 0x07, 0x4d, 0x71, 0x52, 0x65, 0x70,
-	0x6c, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x32, 0x3f, 0x0a, 0x06,
-	0x57, 0x65, 0x43, 0x68, 0x61, 0x74, 0x12, 0x35, 0x0a, 0x0b, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61,
-	0x74, 0x65, 0x4d, 0x73, 0x67, 0x12, 0x11, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72,
-	0x74, 0x79, 0x2e, 0x4d, 0x71, 0x52, 0x65, 0x71, 0x1a, 0x13, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64,
-	0x70, 0x61, 0x72, 0x74, 0x79, 0x2e, 0x4d, 0x71, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x26, 0x5a,
-	0x24, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x66, 0x61, 0x72, 0x79,
-	0x6f, 0x6f, 0x2f, 0x72, 0x65, 0x73, 0x74, 0x61, 0x70, 0x70, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64,
-	0x70, 0x61, 0x72, 0x74, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x6f, 0x12, 0x0a, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x22, 0x1b,
+	0x0a, 0x05, 0x4d, 0x71, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x23, 0x0a, 0x07, 0x4d,
+	0x71, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73,
+	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73,
+	0x32, 0x81, 0x01, 0x0a, 0x0b, 0x54, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x4d, 0x73, 0x67,
+	0x12, 0x38, 0x0a, 0x0e, 0x74, 0x65, 0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x4d, 0x73, 0x67, 0x54,
+	0x6f, 0x43, 0x12, 0x11, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x2e,
+	0x4d, 0x71, 0x52, 0x65, 0x71, 0x1a, 0x13, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72,
+	0x74, 0x79, 0x2e, 0x4d, 0x71, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x38, 0x0a, 0x0e, 0x74, 0x65,
+	0x6d, 0x70, 0x6c, 0x61, 0x74, 0x65, 0x4d, 0x73, 0x67, 0x54, 0x6f, 0x42, 0x12, 0x11, 0x2e, 0x74,
+	0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x2e, 0x4d, 0x71, 0x52, 0x65, 0x71, 0x1a,
+	0x13, 0x2e, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x2e, 0x4d, 0x71, 0x52,
+	0x65, 0x70, 0x6c, 0x79, 0x42, 0x26, 0x5a, 0x24, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x66, 0x61, 0x72, 0x79, 0x6f, 0x6f, 0x2f, 0x72, 0x65, 0x73, 0x74, 0x61, 0x70,
+	0x70, 0x2f, 0x74, 0x68, 0x69, 0x72, 0x64, 0x70, 0x61, 0x72, 0x74, 0x79, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -173,10 +159,12 @@ var file_thirdparty_proto_goTypes = []interface{}{
 	(*MqReply)(nil), // 1: thirdparty.MqReply
 }
 var file_thirdparty_proto_depIdxs = []int32{
-	0, // 0: thirdparty.WeChat.templateMsg:input_type -> thirdparty.MqReq
-	1, // 1: thirdparty.WeChat.templateMsg:output_type -> thirdparty.MqReply
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	0, // 0: thirdparty.TemplateMsg.templateMsgToC:input_type -> thirdparty.MqReq
+	0, // 1: thirdparty.TemplateMsg.templateMsgToB:input_type -> thirdparty.MqReq
+	1, // 2: thirdparty.TemplateMsg.templateMsgToC:output_type -> thirdparty.MqReply
+	1, // 3: thirdparty.TemplateMsg.templateMsgToB:output_type -> thirdparty.MqReply
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -241,72 +229,108 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// WeChatClient is the client API for WeChat service.
+// TemplateMsgClient is the client API for TemplateMsg service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type WeChatClient interface {
-	TemplateMsg(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error)
+type TemplateMsgClient interface {
+	TemplateMsgToC(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error)
+	TemplateMsgToB(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error)
 }
 
-type weChatClient struct {
+type templateMsgClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewWeChatClient(cc grpc.ClientConnInterface) WeChatClient {
-	return &weChatClient{cc}
+func NewTemplateMsgClient(cc grpc.ClientConnInterface) TemplateMsgClient {
+	return &templateMsgClient{cc}
 }
 
-func (c *weChatClient) TemplateMsg(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error) {
+func (c *templateMsgClient) TemplateMsgToC(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error) {
 	out := new(MqReply)
-	err := c.cc.Invoke(ctx, "/thirdparty.WeChat/templateMsg", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/thirdparty.TemplateMsg/templateMsgToC", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// WeChatServer is the server API for WeChat service.
-type WeChatServer interface {
-	TemplateMsg(context.Context, *MqReq) (*MqReply, error)
+func (c *templateMsgClient) TemplateMsgToB(ctx context.Context, in *MqReq, opts ...grpc.CallOption) (*MqReply, error) {
+	out := new(MqReply)
+	err := c.cc.Invoke(ctx, "/thirdparty.TemplateMsg/templateMsgToB", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
-// UnimplementedWeChatServer can be embedded to have forward compatible implementations.
-type UnimplementedWeChatServer struct {
+// TemplateMsgServer is the server API for TemplateMsg service.
+type TemplateMsgServer interface {
+	TemplateMsgToC(context.Context, *MqReq) (*MqReply, error)
+	TemplateMsgToB(context.Context, *MqReq) (*MqReply, error)
 }
 
-func (*UnimplementedWeChatServer) TemplateMsg(context.Context, *MqReq) (*MqReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TemplateMsg not implemented")
+// UnimplementedTemplateMsgServer can be embedded to have forward compatible implementations.
+type UnimplementedTemplateMsgServer struct {
 }
 
-func RegisterWeChatServer(s *grpc.Server, srv WeChatServer) {
-	s.RegisterService(&_WeChat_serviceDesc, srv)
+func (*UnimplementedTemplateMsgServer) TemplateMsgToC(context.Context, *MqReq) (*MqReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TemplateMsgToC not implemented")
+}
+func (*UnimplementedTemplateMsgServer) TemplateMsgToB(context.Context, *MqReq) (*MqReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TemplateMsgToB not implemented")
 }
 
-func _WeChat_TemplateMsg_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func RegisterTemplateMsgServer(s *grpc.Server, srv TemplateMsgServer) {
+	s.RegisterService(&_TemplateMsg_serviceDesc, srv)
+}
+
+func _TemplateMsg_TemplateMsgToC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MqReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WeChatServer).TemplateMsg(ctx, in)
+		return srv.(TemplateMsgServer).TemplateMsgToC(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/thirdparty.WeChat/TemplateMsg",
+		FullMethod: "/thirdparty.TemplateMsg/TemplateMsgToC",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WeChatServer).TemplateMsg(ctx, req.(*MqReq))
+		return srv.(TemplateMsgServer).TemplateMsgToC(ctx, req.(*MqReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _WeChat_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "thirdparty.WeChat",
-	HandlerType: (*WeChatServer)(nil),
+func _TemplateMsg_TemplateMsgToB_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MqReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TemplateMsgServer).TemplateMsgToB(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/thirdparty.TemplateMsg/TemplateMsgToB",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TemplateMsgServer).TemplateMsgToB(ctx, req.(*MqReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _TemplateMsg_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "thirdparty.TemplateMsg",
+	HandlerType: (*TemplateMsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "templateMsg",
-			Handler:    _WeChat_TemplateMsg_Handler,
+			MethodName: "templateMsgToC",
+			Handler:    _TemplateMsg_TemplateMsgToC_Handler,
+		},
+		{
+			MethodName: "templateMsgToB",
+			Handler:    _TemplateMsg_TemplateMsgToB_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
